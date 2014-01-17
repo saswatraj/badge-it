@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Badge-it by saswatraj</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Badge-it</h1>
+        <h2>Create your css customized Github Badges</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/saswatraj/badge-it/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/saswatraj/badge-it/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/saswatraj/badge-it" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="badge-it---" class="anchor" href="#badge-it---"><span class="octicon octicon-link"></span></a>BADGE-IT                               <img src="http://blog.texasswede.com/wp-content/uploads/2013/08/github_small.png" alt="" title="Badge-IT">
+</h1>
+
+<p>Create your css customized badges to display your github profile on websites using html,css and this javascript plugin.Uses jquery version 2 and has been tested to be compatible with all browsers : firefox,chrome and IE.<strong>No authentication required</strong>. Only github username required to fetch the stats. Please see the example file and code below for more details.</p>
+
+<h2>
+<a name="steps" class="anchor" href="#steps"><span class="octicon octicon-link"></span></a>STEPS</h2>
+
+<h3>
+<a name="include-the-javascript-files" class="anchor" href="#include-the-javascript-files"><span class="octicon octicon-link"></span></a>Include the javascript files</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>Example<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"githubapi.js"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+<p>Include the javascript files and the jquery library into your page in the head section</p>
+
+<h3>
+<a name="create-the-structure" class="anchor" href="#create-the-structure"><span class="octicon octicon-link"></span></a>Create the structure</h3>
+
+<p>Create the html structure and design it according to your design specifications.<strong>Give specific id's to the containers you want to display stats or set hyperlinks to github urls of the profile</strong>.In the example the <code>div</code> with <code>id</code> 'git-button' is the div designed to be the badge.</p>
+
+<h3>
+<a name="initialize-the-plugin-to-fetch-stats" class="anchor" href="#initialize-the-plugin-to-fetch-stats"><span class="octicon octicon-link"></span></a>Initialize the plugin to fetch stats</h3>
+
+<p>Call the show fucntion of the WidGit. Pass the id of the container along with the stat number to show the stat there.If it is a url you want to hyperlink to then send the id of <code>&lt;a&gt;</code> tag and it plugin will set the href attribute to that url.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">WidGit</span><span class="p">.</span><span class="nx">show</span><span class="p">(</span>
+    <span class="s1">'profile_name'</span><span class="p">,</span>
+    <span class="p">[{</span><span class="nx">id</span><span class="o">:</span><span class="s1">'container1'</span><span class="p">,</span><span class="nx">stat</span><span class="o">:&lt;</span><span class="nx">stat_number</span><span class="o">&gt;</span><span class="p">},{</span><span class="nx">id</span><span class="o">:</span><span class="s1">'container2'</span><span class="p">,</span><span class="nx">stat</span><span class="o">:&lt;</span><span class="nx">stat_number</span><span class="o">&gt;</span><span class="p">}]</span>
+    <span class="p">);</span>
+</pre></div>
+
+<p>The stats are numbered accordingly.See the list below for the stat number mappings.The attribute column specifies the attribute of the container that will be replaced.</p>
+
+<table>
+<thead><tr>
+<th>Stat Number</th>
+<th>Corresponding Github Property</th>
+<th>Attribute</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>login_name</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>1</td>
+<td>user_id</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>2</td>
+<td>avatar_url</td>
+<td>src</td>
+</tr>
+<tr>
+<td>3</td>
+<td>gravatar_id</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>4</td>
+<td>user url</td>
+<td>href</td>
+</tr>
+<tr>
+<td>5</td>
+<td>followers url</td>
+<td>href</td>
+</tr>
+<tr>
+<td>6</td>
+<td>following url</td>
+<td>href</td>
+</tr>
+<tr>
+<td>7</td>
+<td>gists url</td>
+<td>href</td>
+</tr>
+<tr>
+<td>8</td>
+<td>subscription url</td>
+<td>href</td>
+</tr>
+<tr>
+<td>9</td>
+<td>organization url</td>
+<td>href</td>
+</tr>
+<tr>
+<td>10</td>
+<td>repositories link</td>
+<td>href</td>
+</tr>
+<tr>
+<td>11</td>
+<td>user type</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>12</td>
+<td>total repos</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>13</td>
+<td>total forks</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>14</td>
+<td>followers</td>
+<td>innerHTML</td>
+</tr>
+<tr>
+<td>15</td>
+<td>following</td>
+<td>innerHTML</td>
+</tr>
+</tbody>
+</table><p>For any other stat number the inner html will be replaced by <code>undefined</code>.</p>
+
+<h2>
+<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
+
+<p>If you find any bugs please mail to me at : <strong><a href="mailto:saswatrj2010@gmail.com">saswatrj2010@gmail.com</a></strong></p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
