@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Github.api</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/githubapi.js"></script>
+<style>
+#git-button{
+	background-color:black;
+	width:400px;
+	height:140px;
+	border:1px solid white;
+}
+
+#widgit_gravatar{
+	height: inherit;
+	float: left;
+	width: 80px;
+	text-align: center;
+	background-color: rgb(2,20,31);
+}
+
+#widgit_link_btn
+{
+	color:#fff;
+	width:220px;
+	background-color:rgb(200,227,238);
+	height: inherit;
+	float:left;
+	background:url('img/github.png');
+}
+#widgit_stats{
+	color: #FFF;
+	width: 100px;
+	height: inherit;
+	float: right;
+	background-color: rgb(2,20,31);
+	text-align:center;
+}
+#widgit_gv_pic{
+	width: 60px;
+	height: 60px;
+	margin-top: 10px;
+}
+#widgit_flv
+{
+	line-height: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	width: 75px;
+	height: 20px;
+	margin-top: 20px;
+	background-color: #a3a3a3;
+	color: #fff;
+}
+#widgit_href a{
+	text-decoration:none;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:22px;
+	margin-right:15px;
+}
+#widgit_text_flv{
+	width: 75px;
+	height: 25px;
+	font-family: Tahoma;
+	font-size: 15px;
+	color: #fff;
+}
+
+</style>
+</head>
+<body>
+<script type="text/javascript">
+//alert("hi");
+gitRepo("sonal-raj");
+</script>
+<div id="mydiv">
+
+</div>
+<div id="git-button">
+	<div id="widgit_gravatar">
+		<img id="widgit_gv_pic" style="border-radius: 0px; border: 1px solid white;"/>
+		<div id="widgit_flv"></div>
+		<div id="widgit_text_flv" >followers</div>
+	</div>
+	<div id="widgit_link_btn">
+		<a href="" id="widgit_href" style="text-decoration: none;">
+			<span id="widgit_name" style="margin-top: 20px; float: left; margin-left: 20px; background-color: grey; text-align: center; width: 125px; height: 30px; line-height: 30px; color: rgb(255, 255, 255); text-transform: capitalize; font-weight: bold;"></span>
+		</a>
+	</div>
+	<div id="widgit_stats">
+		<div id="repo_st" style="background-color: rgb(2, 20, 31); height: 40px; line-height: 40px;">
+		</div>
+		<div id="repo_st_tx" style="height: 30px; font-family: Tahoma; line-height: 30px; background-color: rgb(163, 163, 163);">repos</div>
+		<div id="forks_st" style="background-color: rgb(2, 20, 31); height: 40px; line-height: 40px;">
+		</div>
+		<div id="forks_st_tx" style="height: 30px; font-family: Tahoma; line-height: 30px; background-color: rgb(163, 163, 163);">forks</div>
+	</div>
+</div>
+<script>
+WidGit.show(
+	'saswatraj',
+	[{id:'widgit_gv_pic',stat:2},{id:'widgit_flv',stat:14},{id:'widgit_href',stat:4},
+		{id:'widgit_name',stat:0},{id:'repo_st',stat:12},{id:'forks_st',stat:13}]
+	);
+</script>
+</body>
+</html>
