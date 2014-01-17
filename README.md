@@ -48,3 +48,7 @@ Stat Number | Corresponding Github Property | Attribute
 15 | following | innerHTML
 
 For any other stat number the inner html will be replaced by `undefined`.
+
+## Bugs 
+If you find any bugs please mail to me at : __saswatrj2010@gmail.com__
+
